@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/zqv6jck.css">
 
   {% include 'social-meta-tags' %}
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   {% include 'style-tags', layout: 'theme' %}
   {% include 'css-variables' %}
 
@@ -57,6 +58,7 @@
   {% include 'script-tags', layout: 'theme' %}
 
   {{ content_for_header }}
+
 </head>
 
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
@@ -68,6 +70,11 @@
   <main role="main" id="MainContent">
     {{ content_for_layout }}
   </main>
+
+  {% if template == 'index' %}
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    {{ 'carousel.js'  | asset_url | script_tag }}
+  {% endif %}
 
 </body>
 </html>

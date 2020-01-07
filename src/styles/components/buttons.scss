@@ -9,3 +9,26 @@
   user-select: none;
   appearance: none;
 }
+
+
+
+.collection-btn {
+  display: block;
+  width: 125px;
+  line-height: 35px;
+  margin: 0 auto 50px;
+  background: #003366;
+  text-align: center;
+  font-size: 14px;
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (min-width: 400px) {
+  .collection-btn {
+    font-size: 18px;
+    line-height: 55px;
+    width:175px;
+  }
+}

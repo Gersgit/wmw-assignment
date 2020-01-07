@@ -5,5 +5,45 @@
  *
  */
 .featured-collection {
-  
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    line-height: 34px;
+    color: #003366;
+  }
+
+  p {
+    span {
+      display: block;
+      margin:0 auto;
+      max-width: 611px;
+      min-width: 284px;
+      font-size: 14px;
+      line-height: 21px;
+      color:#9B9B9B;
+      text-align: center;
+    }
+  }
+
+}
+
+@media (min-width: 400px) {
+  .featured-collection {
+
+    h2 {
+      font-size: 40px;
+      line-height: 49px;
+    }
+
+    p {
+      span {        
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+
+  }
+
 }

@@ -13,27 +13,15 @@
 
   <p>{{ collection.description }}</p>
 
-  {% for product in collection.products limit: 6 %}
-    {% assign current_variant = product.selected_or_first_available_variant %}
-  
-    <a href="{{ product.url | within: collection }}">
-      <div>
-        {% if product.featured_image != blank %}
-          {{ product.featured_image | img_url: 'large' | img_tag }}
-        {% endif %}
-        
-        <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
-      </div>
+  {% include 'product-carousel' %}
 
-      <div>
-        <p>{{ product.title | escape }}</p>
+  <a
+    class="collection-btn"
+    href="{{ collection.url }}"
+  >
+  View collection
+  </a>
 
-        <span>
-          {% include 'product-price' %}
-        </span>
-      </div>
-    </a>
-  {% endfor %}
 </section>
 
 {% schema %}

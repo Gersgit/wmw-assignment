@@ -31,7 +31,7 @@ register('featured-collection', {
   // Shortcut function called when a section is loaded via 'sections.load()' or by the Theme Editor 'shopify:section:load' event.
   onLoad() {
     // Do something when a section instance is loaded
-    this.init();
+    this.init();    
   },
 
   // Shortcut function called when a section unloaded by the Theme Editor 'shopify:section:unload' event.

@@ -1,0 +1,31 @@
+<div class="carousel">
+{% for product in collection.products limit: 6 %}
+  {% assign current_variant = product.selected_or_first_available_variant %}
+
+  <div class="carousel-cell">
+    <a href="{{ product.url | within: collection }}">
+      <div>
+        {% if product.featured_image != blank %}
+          {{ product.featured_image | img_url: 'large' | img_tag }}
+        {% endif %}
+
+        <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+
+        {% if product.compare_at_price > product.price %}
+          <div class="sale-tag">Sale</div>
+        {% endif %}
+
+      </div>
+
+      <div>
+        <p>{{ product.title | escape }}</p>
+
+        <span>
+          {{ product.price | money }}
+        </span>
+      </div>
+    </a>
+  </div>
+
+{% endfor %}
+</div>
